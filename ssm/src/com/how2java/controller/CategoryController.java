@@ -11,22 +11,22 @@ import org.springframework.web.servlet.ModelAndView;
 import com.how2java.pojo.Category;
 import com.how2java.service.CategoryService;
 
-// 告诉spring mvc这是一个控制器类
+// 鍛婅瘔spring mvc杩欐槸涓�涓帶鍒跺櫒绫�
 @Controller
 @RequestMapping("")
 public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
 
-	@RequestMapping("listCategory")
+	@RequestMapping("login")
 	public ModelAndView listCategory(){
 		ModelAndView mav = new ModelAndView();
 		List<Category> cs= categoryService.list();
 		
-		// 放入转发参数
+		// 鏀惧叆杞彂鍙傛暟
 		mav.addObject("cs", cs);
-		// 放入jsp路径
-		mav.setViewName("listCategory");
+		// 鏀惧叆jsp璺緞
+		mav.setViewName("login");
 		return mav;
 	}
 
