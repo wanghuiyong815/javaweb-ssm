@@ -18,7 +18,7 @@ public class CategoryController {
 	@Autowired
 	CategoryService categoryService;
 
-	@RequestMapping("login")
+	@RequestMapping("listCategory")
 	public ModelAndView listCategory(){
 		ModelAndView mav = new ModelAndView();
 		List<Category> cs= categoryService.list();
@@ -26,7 +26,7 @@ public class CategoryController {
 		// 鏀惧叆杞彂鍙傛暟
 		mav.addObject("cs", cs);
 		// 鏀惧叆jsp璺緞
-		mav.setViewName("login");
+		mav.setViewName("listCategory");
 		return mav;
 	}
 
